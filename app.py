@@ -27,7 +27,7 @@ if __name__ == "__main__":
     for contact in contacts:
         try:
             wp.find_chat(driver, contact)
-            time.sleep(2)
+            time.sleep(1)
             wp.send_message(driver, message)
         except Exception:
             print(
@@ -35,7 +35,7 @@ if __name__ == "__main__":
             )
         time.sleep(3)
 
+    wp.close_browser(driver)
     input(
         "Programa finalizado !\nPressione qualquer tecla para fechar"
     )
-    wp.close_browser(driver)

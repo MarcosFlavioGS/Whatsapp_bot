@@ -1,4 +1,5 @@
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.wait import WebDriverWait
 import time
 
 
@@ -20,7 +21,6 @@ def send_message(driver, message):
         by="xpath",
         value='//*[@id="main"]/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[1]/p'
     )
-
     input_box.clear()
     input_box.send_keys(message)
 
@@ -28,7 +28,8 @@ def send_message(driver, message):
         by="xpath",
         value='//*[@id="main"]/footer/div[1]/div/span[2]/div/div[2]/div[2]/button/span'
     )
-    time.sleep(3)
+    wait = WebDriverWait(driver, timeout=2)
+    wait.until(lambda d: send_button.is_displayed())
     send_button.click()
 
 
