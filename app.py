@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 import time
 import src.file_utils as file
 import src.whatsapp_utils as wp
@@ -30,7 +29,7 @@ if __name__ == "__main__":
             wp.find_chat(driver, contact)
             time.sleep(2)
             wp.send_message(driver, message)
-        except:
+        except Exception:
             print(
                 f"Houve um problema com o contato: {contact}."
             )
