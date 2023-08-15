@@ -5,6 +5,12 @@ def get_message():
 
 
 def get_contacts():
-    with open("contatos.txt", 'r') as contacts:
+    with open("contatos.txt", 'r', encoding="UTF-8") as contacts:
         contacts = [i.strip() for i in contacts]
     return contacts
+
+
+def get_link():
+    with open("link.txt", "r", encoding="UTF-8") as file:
+        site = [i.strip() for i in file]
+    return site

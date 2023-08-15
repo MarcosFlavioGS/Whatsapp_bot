@@ -18,17 +18,19 @@ if __name__ == "__main__":
     driver = webdriver.Chrome()  # Or webdriver.Firefox() for Firefox
     message = file.get_message()
     contacts = file.get_contacts()
+    site = file.get_link()
 
     initialization_msg()
     time.sleep(5)
     wp.open_browser(driver)
-    time.sleep(10)
+    time.sleep(20)
 
     for contact in contacts:
         try:
             wp.find_chat(driver, contact)
             time.sleep(1)
             wp.send_message(driver, message)
+            wp.send_link(driver, site)
         except Exception:
             print(
                 f"Houve um problema com o contato: {contact}."
