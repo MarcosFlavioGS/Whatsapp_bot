@@ -30,7 +30,8 @@ if __name__ == "__main__":
             wp.find_chat(driver, contact)
             time.sleep(1)
             wp.send_message(driver, message)
-            wp.send_link(driver, site)
+            for line in site:
+                wp.send_link(driver, line)
         except Exception:
             print(
                 f"Houve um problema com o contato: {contact}."
