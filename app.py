@@ -16,9 +16,9 @@ def initialization_msg():
 
 if __name__ == "__main__":
     driver = webdriver.Chrome()  # Or webdriver.Firefox() for Firefox
-    message = file.get_message()
-    contacts = file.get_contacts()
-    site = file.get_link()
+    message = file.get_content("message.txt")
+    contacts = file.get_content("contatos.txt")
+    site = file.get_content("link.txt")
 
     initialization_msg()
     time.sleep(5)
