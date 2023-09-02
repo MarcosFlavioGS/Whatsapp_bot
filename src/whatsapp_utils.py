@@ -33,7 +33,7 @@ def send_message(driver, message):
     send_button.click()
 
 
-def send_link(driver, link):
+def send_link(driver, link, sleeper):
     input_box = driver.find_element(
         by="xpath",
         value='//*[@id="main"]/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[1]/p'
@@ -43,7 +43,7 @@ def send_link(driver, link):
         by="xpath",
         value='//*[@id="main"]/footer/div[1]/div/span[2]/div/div[2]/div[2]/button/span'
     )
-    time.sleep(5)
+    time.sleep(sleeper)
     send_button.click()
 
 
