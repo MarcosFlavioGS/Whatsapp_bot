@@ -3,7 +3,7 @@ from selenium import webdriver
 import time
 import re
 import src.whatsapp_utils as wp
-from src.run_class import Run, get_config
+from src.run_class import Run, get_config, update_json
 
 
 def initialization_msg():
@@ -39,6 +39,7 @@ if __name__ == "__main__":
                 f"Houve um problema com o contato: {contact}."
             )
         run.last_contact = contact
+        update_json(data, "ultimo contato", contact)
         time.sleep(run.sleep_contact)
 
     wp.close_browser(driver)

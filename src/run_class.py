@@ -26,3 +26,8 @@ def get_config(run):
         run.sleep_contact = data.get("tempo entre contatos")
 
         return data
+
+def update_json(data, field, contact):
+    data[field] = contact
+    with open("config.json", "w", encoding="UTF-8") as file:
+        json.dump(data, file, indent=4, ensure_ascii=False)
