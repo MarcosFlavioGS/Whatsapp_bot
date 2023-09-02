@@ -18,7 +18,7 @@ def initialization_msg():
 if __name__ == "__main__":
     driver = webdriver.Chrome()  # Or webdriver.Firefox() for Firefox
     run = Run()
-    data = get_config(run)
+    json_data = get_config(run)
 
     initialization_msg()
     time.sleep(5)
@@ -39,7 +39,7 @@ if __name__ == "__main__":
                 f"Houve um problema com o contato: {contact}."
             )
         run.last_contact = contact
-        update_json(data, "ultimo contato", contact)
+        update_json(json_data, "ultimo contato", contact)
         time.sleep(run.sleep_contact)
 
     wp.close_browser(driver)
