@@ -3,7 +3,8 @@ from selenium import webdriver
 import time
 import re
 import src.whatsapp_utils as wp
-from src.run_class import Run, get_config, update_json
+from src.run_class import Run
+from src.set_config import get_config, update_json
 
 
 def initialization_msg():
@@ -26,9 +27,8 @@ if __name__ == "__main__":
     time.sleep(20)
 
     for contact in run.contacts:
-        message = re.sub(r'PESSOA', contact, str(run.message))
-
         try:
+            message = re.sub(r'PESSOA', contact, str(run.message))
             wp.find_chat(driver, contact)
             time.sleep(1)
             wp.send_message(driver, message)
