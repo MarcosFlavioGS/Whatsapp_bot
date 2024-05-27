@@ -5,6 +5,7 @@ import re
 import src.whatsapp_utils as wp
 from src.run_class import Run
 from src.set_config import get_config, update_json
+from chromedriver_py import binary_path
 
 
 def initialization_msg():
@@ -17,7 +18,8 @@ def initialization_msg():
 
 
 if __name__ == "__main__":
-    driver = webdriver.Chrome()  # Or webdriver.Firefox() for Firefox
+    svc = webdriver.ChromeService(executable_path=binary_path)
+    driver = webdriver.Chrome(service=svc)
     run = Run()
     json_data = get_config(run)
     found_last = False
