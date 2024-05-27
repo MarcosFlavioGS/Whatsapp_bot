@@ -1,11 +1,11 @@
 {
-    "files": {
-        "contatos": "contatos.txt",
-        "mensagem": "message.txt",
-        "link": "link.txt"
-    },
-    "tempo para link": 5,
-    "tempo entre contatos": 3,
-    "recomeçar": true,
-    "ultimo contato": "Anotações"
+  "files": {
+    "contatos": "contatos.txt",
+    "mensagem": "message.txt",
+    "link": "link.txt"
+  },
+  "tempo para link": 5,
+  "tempo entre contatos": 3,
+  "recomeçar": true,
+  "ultimo contato": "Anotações"
 }
